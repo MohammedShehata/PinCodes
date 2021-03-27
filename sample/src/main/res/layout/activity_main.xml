@@ -1,18 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        tools:context=".sample.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pin24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:importantForAutofill="yes"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
