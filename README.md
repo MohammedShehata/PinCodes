@@ -67,8 +67,9 @@ PinCodes.newInstance(
 ```
 Where editPin1, editPin2, .... are edit text views and the pincodes library will group them to act as the next sample.
 
-
-![alt pincodes sample](static/pinscode_sample.gif)
+<p align="center">
+  <img src="static/pinscode_sample.gif" width="30%"/>
+</p>
 
 You can also check the sample code.
 ## Built With
