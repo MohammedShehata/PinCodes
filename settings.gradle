@@ -1,2 +1,3 @@
+include ':pincodes'
 include ':sample'
 rootProject.name = "PinCodes"
