@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), PinCodes.OnPinsCompleteListener {
         )
     }
 
-    override fun onPinsCompleted() {
-        Toast.makeText(this, "pins group completed", Toast.LENGTH_SHORT).show()
+    override fun onPinsCompleted(code: String) {
+        Toast.makeText(this, "code = $code", Toast.LENGTH_SHORT).show()
     }
 }

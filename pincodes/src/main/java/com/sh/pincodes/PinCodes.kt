@@ -5,6 +5,7 @@ import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
+import java.lang.StringBuilder
 
 class PinCodes private constructor(
     private val pinsViews: Array<out EditText>,
@@ -35,11 +36,19 @@ class PinCodes private constructor(
                     }
                     onTextChanged(pin, nextPin, char, trailingText)
                     if (nextPin == null && pin.text.toString().length == 1) { // the last pin
-                        onPinsCompleteListener.onPinsCompleted()
+                        onPinsCompleteListener.onPinsCompleted(getPinsCode())
                     }
                 }
             })
         }
+    }
+
+    private fun getPinsCode(): String {
+        val sb = StringBuilder("")
+        for (pin in pinsViews) {
+            sb.append(pin.text.toString())
+        }
+        return sb.toString()
     }
 
     private fun onTextChanged(
@@ -107,6 +116,6 @@ class PinCodes private constructor(
     }
 
     interface OnPinsCompleteListener {
-        fun onPinsCompleted()
+        fun onPinsCompleted(code: String)
     }
 }
