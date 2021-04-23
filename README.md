@@ -25,7 +25,7 @@ Step 1. Add the JitPack repository to your build file
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.MohammedShehata:PinCodes:1.0.0'
+	        implementation 'com.github.MohammedShehata:PinCodes:1.1.0'
 	}
 
 
@@ -45,7 +45,7 @@ Step 2. Add the dependency
 	<dependency>
 	    <groupId>com.github.MohammedShehata</groupId>
 	    <artifactId>PinCodes</artifactId>
-	    <version>1.0.0</version>
+	    <version>1.1.0</version>
 	</dependency>
 
 ## How do I use Pincodes?
@@ -54,7 +54,7 @@ Step 2. Add the dependency
 ```
 PinCodes.newInstance(
             object : PinCodes.OnPinsCompleteListener {
-                override fun onPinsCompleted() {
+                override fun onPinsCompleted(code: String) {
                     
                 }
 
