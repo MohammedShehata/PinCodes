@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity(), PinCodes.OnPinsCompleteListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         PinCodes.newInstance(
             this,
             binding.editPin1,
@@ -35,6 +34,10 @@ class MainActivity : AppCompatActivity(), PinCodes.OnPinsCompleteListener {
     }
 
     override fun onPinsCompleted(code: String) {
-        Toast.makeText(this, "code = $code", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "completed code = $code", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPinsCodeChanged(code: String) {
+        Toast.makeText(this, "on code changed = $code", Toast.LENGTH_SHORT).show()
     }
 }

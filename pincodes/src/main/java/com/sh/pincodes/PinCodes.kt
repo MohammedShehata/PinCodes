@@ -35,9 +35,6 @@ class PinCodes private constructor(
                         null
                     }
                     onTextChanged(pin, nextPin, char, trailingText)
-                    if (nextPin == null && pin.text.toString().length == 1) { // the last pin
-                        onPinsCompleteListener.onPinsCompleted(getPinsCode())
-                    }
                 }
             })
         }
@@ -46,7 +43,9 @@ class PinCodes private constructor(
     private fun getPinsCode(): String {
         val sb = StringBuilder("")
         for (pin in pinsViews) {
-            sb.append(pin.text.toString())
+            if (pin.text.toString().isNotEmpty()) {
+                sb.append(pin.text.toString())
+            }
         }
         return sb.toString()
     }
@@ -71,7 +70,7 @@ class PinCodes private constructor(
         if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_DOWN) {
             val currentPinIndex = findIndex(view.id)
             if (currentPinIndex > 0 && pinsViews[currentPinIndex].text.isNullOrEmpty()) {
-                requestFocus(pinsViews.get(currentPinIndex - 1))
+                requestFocus(pinsViews[currentPinIndex - 1])
             }
         }
         return false
@@ -91,7 +90,7 @@ class PinCodes private constructor(
         editPin.setSelection(editPin.text.length)
     }
 
-    private abstract class CustomTextWatcher : TextWatcher {
+    private abstract inner class CustomTextWatcher : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
         }
 
@@ -107,6 +106,12 @@ class PinCodes private constructor(
 
                 onTextChanged(text[0], other)
             }
+            val pinsCode = getPinsCode()
+            if (pinsCode.length == pinsViews.size) {
+                onPinsCompleteListener.onPinsCompleted(pinsCode)
+            } else {
+                onPinsCompleteListener.onPinsCodeChanged(pinsCode)
+            }
         }
 
         override fun afterTextChanged(p0: Editable?) {
@@ -117,5 +122,7 @@ class PinCodes private constructor(
 
     interface OnPinsCompleteListener {
         fun onPinsCompleted(code: String)
+
+        fun onPinsCodeChanged(code: String)
     }
 }
