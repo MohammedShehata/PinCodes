@@ -58,7 +58,7 @@ PinCodes.newInstance(
                     
                 }
 
-				override fun onPinsCodeChanged(code: String) {
+		override fun onPinsCodeChanged(code: String) {
                     
                 }
             },
